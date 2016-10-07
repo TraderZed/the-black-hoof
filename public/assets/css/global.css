@@ -1,0 +1,74 @@
+@import url(normalize.css);
+@import 'https://fonts.googleapis.com/css?family=Assistant:200|PT+Serif:400,400i';
+h1 {
+  font-family: "PT Serif", serif;
+  font-size: 40px; }
+
+h2 {
+  font-family: "PT Serif", serif;
+  font-size: 24px; }
+
+h3 {
+  font-family: "Assistant", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase; }
+  h3.serif {
+    font-family: "PT Serif", serif;
+    text-transform: none; }
+    h3.serif span {
+      font-style: italic; }
+
+body {
+  font-family: "Courier", Arial, sans-serif;
+  font-size: 13px; }
+
+body {
+  background: #000;
+  color: #fff; }
+  body .content {
+    margin: 0 auto;
+    max-width: 1024px;
+    overflow: hidden; }
+  body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+
+header {
+  height: 100vh;
+  position: relative; }
+  header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+  header .content {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.hoof-info .hoof-info-left {
+  float: left;
+  width: 30%; }
+
+.hoof-info .hoof-info-right {
+  float: right;
+  width: 60%; }
+
+.hoof-menu-food {
+  text-align: center; }
+  .hoof-menu-food .hoof-menu-food-left {
+    float: left;
+    text-align: left;
+    width: 60%; }
+  .hoof-menu-food .hoof-menu-food-right {
+    float: right;
+    text-align: left;
+    width: 30%; }
+  .hoof-menu-food h3 {
+    margin: 0; }
+    .hoof-menu-food h3 span {
+      float: right; }
+
+/* Smartphones (portrait and landscape) ----------- */

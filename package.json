@@ -1,0 +1,26 @@
+{
+  "name": "the-black-hoof",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TraderZed/the-black-hoof.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TraderZed/the-black-hoof/issues"
+  },
+  "homepage": "https://github.com/TraderZed/the-black-hoof#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  },
+  "dependencies": {
+    "gulp-haml": "^0.1.6"
+  }
+}

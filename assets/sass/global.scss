@@ -1,0 +1,70 @@
+@import "normalize.css";
+@import "fonts";
+@import "typography";
+
+body {
+  background: #000;
+  color: #fff;
+  .content {
+    margin: 0 auto;
+    max-width: 1024px;
+    overflow: hidden;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+header {
+  height: 100vh;
+  position: relative;
+  nav {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+  }
+  .content {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.hoof-info {
+  .hoof-info-left {
+    float: left;
+    width: 30%;
+  }
+  .hoof-info-right {
+    float: right;
+    width: 60%;
+  }
+}
+
+.hoof-menu-food {
+  text-align: center;
+  .hoof-menu-food-left {
+    float: left;
+    text-align: left;
+    width: 60%;
+  }
+  .hoof-menu-food-right {
+    float: right;
+    text-align: left;
+    width: 30%;
+  }
+  h3 {
+    margin: 0;
+    span {
+      float: right;
+    }
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+}

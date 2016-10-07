@@ -1,0 +1,72 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{ content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %title The Black Hoof
+    %link{ href: "public/assets/css/global.css", rel: "stylesheet", type: "text/css"}/
+  %body
+    %header
+      %nav
+        %ul
+          %li The Black Hoof
+          %li Cocktail Bar
+          %li Rhum Corner
+      .content
+        %h1 The Black Hoof
+        %h4 This is some random ticker copy that can be updated.
+    %section.hoof-info
+      .content
+        .hoof-info-left
+          %h1 Opened in Early October 2008
+          %p Everything is made: from the charcuterie to the cocktail garnishes. It’s a meat and off-cut centric menu to be sure, but there is often a fish option (sometimes, even a veggie option). There is much attention to detail in the service. The atmosphere is boisterous and casual.
+          %h2 Come eat.
+          %address
+            928 Dundas Street West
+            %br
+            Toronto ON M6J 1W3
+            %br
+            %br
+            416 551 8854
+          %p (before you give us a ring, you should know that we don't take reservations)
+        .hoof-info-right
+          .hoof-info-hours
+            Thursday	6:00pm - 11:30pm
+            Friday & Saturday	6:00pm - 1:00am
+            Sunday & Monday	6:00pm - 11:30pm
+            Tuesday & Wednesday	-CLOSED-
+          .hoof-info-links
+            %a What am i eating
+            %a what am i drinking
+            %a where is this place
+    %section.hoof-menu-food
+      .content
+        %h2 The Food Menu
+        %p We try our best to keep this up to date but we aren't making any promises.
+        .hoof-menu-food-left
+          %ul.hoof-menu-food-list
+        .hoof-menu-food-right
+          %p OUR HOURS ARE A LITTLE ODD.
+          %p I WOULD CHECK 'EM TWICE JUST TO BE ON THE SAFE SIDE.
+          %p CASH & CDN DEBIT -ALSO- NO RESERVATIONS
+    %section
+      %h1 Heading 1
+      %h2 Heading 2
+      %h3 Heading 3
+      %h3.serif
+        %span Heading 3 Serif
+      %p Paragraph
+
+    %footer
+    %script{ src: "./public/assets/js/vendor/jquery-3.1.1.min.js" }
+    %script{ src: "https://www.gstatic.com/firebasejs/3.4.1/firebase.js" }
+    :javascript
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCTuJTnEAQ2jzl4_BWEKeszt8AGa1bmc2Q",
+        authDomain: "the-black-hoof.firebaseapp.com",
+        databaseURL: "https://the-black-hoof.firebaseio.com",
+        storageBucket: "the-black-hoof.appspot.com",
+        messagingSenderId: "713556181914"
+      };
+      firebase.initializeApp(config);
+    %script{ src: "./public/assets/js/index.js" }
