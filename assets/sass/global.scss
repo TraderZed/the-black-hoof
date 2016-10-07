@@ -56,10 +56,53 @@ header {
     text-align: left;
     width: 30%;
   }
+  li {
+    margin-bottom: 10px;
+  }
   h3 {
     margin: 0;
     span {
       float: right;
+    }
+  }
+}
+
+.hoof-menu-cocktails {
+  overflow: hidden;
+  text-align: center;
+  ul {
+    text-align: left;
+  }
+  .hoof-menu-cocktails-list {
+    float: left;
+    width: 60%;
+    li {
+      margin: 0 0 30px 0;
+    }
+    h3 {
+      font-size: 24px;
+      margin: 0 0 5px 0;
+      span {
+        float: right;
+        font-family: $courier;
+        font-size: 13px;
+        font-style: normal;
+        padding-top: 5px;
+      }
+    }
+    p {
+      margin: 0;
+      width: 75%;
+    }
+  }
+}
+
+.hoof-menu-wine {
+  ul {
+    li {
+      display: inline-block;
+      vertical-align: top;
+      width: 33%;
     }
   }
 }

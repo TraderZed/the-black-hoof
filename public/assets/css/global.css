@@ -66,9 +66,39 @@ header {
     float: right;
     text-align: left;
     width: 30%; }
+  .hoof-menu-food li {
+    margin-bottom: 10px; }
   .hoof-menu-food h3 {
     margin: 0; }
     .hoof-menu-food h3 span {
       float: right; }
+
+.hoof-menu-cocktails {
+  overflow: hidden;
+  text-align: center; }
+  .hoof-menu-cocktails ul {
+    text-align: left; }
+  .hoof-menu-cocktails .hoof-menu-cocktails-list {
+    float: left;
+    width: 60%; }
+    .hoof-menu-cocktails .hoof-menu-cocktails-list li {
+      margin: 0 0 30px 0; }
+    .hoof-menu-cocktails .hoof-menu-cocktails-list h3 {
+      font-size: 24px;
+      margin: 0 0 5px 0; }
+      .hoof-menu-cocktails .hoof-menu-cocktails-list h3 span {
+        float: right;
+        font-family: "Courier", Arial, sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        padding-top: 5px; }
+    .hoof-menu-cocktails .hoof-menu-cocktails-list p {
+      margin: 0;
+      width: 75%; }
+
+.hoof-menu-wine ul li {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%; }
 
 /* Smartphones (portrait and landscape) ----------- */
