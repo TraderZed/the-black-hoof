@@ -8,6 +8,15 @@ class @BlackHoof
     @getCocktails()
     @getRedWine()
     @getWhiteWine()
+    @getBeer()
+    @getCopy()
+  @getCopy: ->
+    $.ajax(
+      type: "GET",
+      url:  "https://the-black-hoof.firebaseio.com/hoof_copydeck.json",
+      success: (data) =>
+        @populateCopy(data)
+    )
   @getHours: ->
     $.ajax(
       type: "GET",
@@ -43,6 +52,13 @@ class @BlackHoof
       success: (data) =>
         @buildWhiteWine(data)
     )
+  @getBeer: ->
+    $.ajax(
+      type: "GET",
+      url:  "https://the-black-hoof.firebaseio.com/hoof_beer.json",
+      success: (data) =>
+        @buildBeer(data)
+    )
   @buildHours: (hours) ->
     $hoursTable = $('.hoof-info-hours')
     $.each hours, (i, val) ->
@@ -55,6 +71,10 @@ class @BlackHoof
     $cocktailMenu = $('.hoof-menu-cocktails-list')
     $.each items, (i, val) ->
       $cocktailMenu.append('<li><h3 class="serif">' + val.name + '<span>' + val.price + '</span></h3><p>' + val.description + '</p></li>')
+  @buildBeer: (items) ->
+    $beerMenu = $('.hoof-menu-beer-list')
+    $.each items, (i, val) ->
+      $beerMenu.append('<li>' + val.name + '</li>')
   @buildRedWine: (items) ->
     $redWineMenu = $('.hoof-menu-red-wine-list')
     $.each items, (i, val) ->
@@ -63,5 +83,8 @@ class @BlackHoof
     $whiteWineMenu = $('.hoof-menu-white-wine-list')
     $.each items, (i, val) ->
       $whiteWineMenu.append('<li><h3>' + val.name + '</h3><p>' + val.description + '<span>' + val.price + '</span></p></li>')
+  @populateCopy: (copy) ->
+    $.each copy, (i, val) ->
+      $('.js-copy-' + val.key).html(val.copy)
 
 window.BlackHoof.init()

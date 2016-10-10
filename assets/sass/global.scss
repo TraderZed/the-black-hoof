@@ -1,6 +1,7 @@
 @import "normalize.css";
 @import "fonts";
 @import "typography";
+@import "buttons";
 
 body {
   background: #000;
@@ -18,12 +19,44 @@ body {
 }
 
 header {
+  background: url('../images/masthead/masthead_01.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   position: relative;
   nav {
-    position: absolute;
+    background: #000;
+    position: fixed;
     top: 0; left: 0;
     width: 100%;
+    z-index: 1;
+    ul {
+      margin: 0 auto;
+      max-width: 1024px;
+      overflow: hidden;
+      li {
+        display: inline-block;
+        margin: 0 40px 0 0;
+        a {
+          color: #fff;
+          display: inline-block;
+          opacity: .5;
+          padding: 10px 0;
+          text-transform: uppercase;
+          text-decoration: none;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    background: url('../images/main_blackhoof.png') 0 0 no-repeat;
+    height: 240px;
+    margin: 0 auto;
+    text-indent: -999999px;
+    width: 350px;
   }
   .content {
     position: relative;
@@ -33,7 +66,35 @@ header {
   }
 }
 
+section {
+  padding: 100px 0;
+}
+
 .hoof-info {
+  background: url('../images/backgrounds/intro_blackhoof.jpg') 0 0 repeat;
+  h1, h2 {
+    font-style: italic;
+  }
+  table {
+    border-bottom: 1px solid #fff;
+    padding: 0 0 20px 0;
+    width: 100%;
+    tr {
+      td {
+        font-family: $playfair;
+        &:first-child {
+          font-size: 24px;
+        }
+        &:last-child {
+          font-size: 18px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  address {
+    font-style: normal;
+  }
   .hoof-info-left {
     float: left;
     width: 30%;
@@ -45,7 +106,34 @@ header {
 }
 
 .hoof-menu-food {
+  background: url('../images/backgrounds/chalkboard.jpg') 0 0 repeat;
   text-align: center;
+  .content {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 50px;
+  }
+  h2 {
+    font-family: $assistant;
+    font-size: 50px;
+    margin: 0;
+    text-transform: uppercase;
+    span {
+      border-bottom: 1px solid #fff;
+      display: inline-block;
+      font-size: 36px;
+      line-height: 100%;
+      position: relative;
+      top: -4px;
+    }
+  }
+  .section-header {
+    border-bottom: 1px solid #fff;
+    padding: 0 0 30px 0;
+    margin: 0 0 50px 0;
+    p {
+      padding: 0 300px;
+    }
+  }
   .hoof-menu-food-left {
     float: left;
     text-align: left;
@@ -55,11 +143,35 @@ header {
     float: right;
     text-align: left;
     width: 30%;
-  }
-  li {
-    margin-bottom: 10px;
+    p {
+      border-bottom: 1px solid #fff;
+      font-size: 34px;
+      font-family: $assistant;
+      line-height: 42px;
+      padding-bottom: 40px;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      &:first-child {
+        border: 0;
+      }
+      &:last-child {
+        border-top: 1px solid #fff;
+        padding-top: 40px;
+        margin-top: 10px;
+      }
+      span {
+        border-bottom: 1px solid #fff;
+        display: inline-block;
+        font-size: 23px;
+        line-height: 100%;
+        position: relative;
+        top: -4px;
+      }
+    }
   }
   h3 {
+    font-size: 27px;
     margin: 0;
     span {
       float: right;
@@ -67,20 +179,51 @@ header {
   }
 }
 
+.hoof-menu-drinks {
+  background: url('../images/backgrounds/drinks.jpg') 0 0 repeat;
+  background-size: cover;
+  color: #000;
+}
+
 .hoof-menu-cocktails {
+  background: url('../images/backgrounds/cocktails.png') 0 0 no-repeat;
+  float: left;
   overflow: hidden;
   text-align: center;
+  width: 70%;
+  h2 {
+    font-size: 40px;
+    letter-spacing: 6px;
+    margin: 0;
+    padding-left: 245px;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-family: $playfair;
+    font-style: italic;
+    margin-top: 75px;
+    text-transform: none;
+    text-align: left;
+  }
+  p {
+    padding-left: 245px;
+  }
   ul {
     text-align: left;
   }
   .hoof-menu-cocktails-list {
-    float: left;
-    width: 60%;
+    h3 {
+      font-style: normal;
+    }
     li {
       margin: 0 0 30px 0;
     }
+    p {
+      padding: 0;
+    }
     h3 {
       font-size: 24px;
+      font-weight: normal;
       margin: 0 0 5px 0;
       span {
         float: right;
@@ -97,17 +240,210 @@ header {
   }
 }
 
-.hoof-menu-wine {
+.hoof-menu-beer {
+  background: url('../images/backgrounds/beer.png') center 0 no-repeat;
+  float: right;
+  padding-top: 410px;
+  text-align: center;
+  width: 25%;
+  h2 {
+    border-bottom: 1px solid #000;
+    font-size: 30px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
   ul {
     li {
-      display: inline-block;
-      vertical-align: top;
-      width: 33%;
+      margin-bottom: 20px;
     }
   }
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+.hoof-menu-wine {
+  border-top: 1px solid #000;
+  margin-top: 30px;
+  padding-top: 30px;
+  clear: both;
+  h3 {
+    margin-bottom: 0;
+  }
+  ul {
+    border-bottom: 1px solid #000;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+    h3 {
+      font-family: $playfair;
+      font-size: 22px;
+      font-weight: normal;
+      text-transform: none;
+    }
+    p {
+      span {
+        display: block;
+        padding-top: 20px;
+      }
+    }
+    li {
+      display: inline-block;
+      padding-right: 3%;
+      vertical-align: top;
+      width: 30%;
+    }
+  }
+}
 
+footer {
+  padding: 50px 0 100px 0;
+  .content {
+    position: relative;
+    background: url('../images/backgrounds/map.gif') right 200px no-repeat;
+    min-height: 700px;
+  }
+  .footer-left {
+    width: 250px;
+  }
+  address {
+    font-style: normal;
+    position: absolute;
+    h3 {
+      font-size: 24px;
+      font-family: $playfair;
+      font-weight: normal;
+      margin: 0 0 10px 0;
+      text-transform: none;
+    }
+    &.hoof {
+      top: 185px;
+      left: 425px;
+    }
+    &.cocktail {
+      right: 0;
+      top: 380px;
+    }
+    &.rhum {
+      right: 85px;
+      top: 115px;
+    }
+  }
+}
+
+/* Tablet ---------------*/
+
+@media screen and (max-width: 1050px)  {
+  section {
+    padding: 50px 0;
+  }
+  .content {
+    padding: 0 20px;
+  }
+  header {
+    h1 {
+      background-size: 100%;
+      width: 280px;
+    }
+    nav {
+      ul li {
+        font-size: 11px;
+        margin: 0 11px;
+      }
+    }
+  }
+
+  .hoof-info {
+    table {
+      tr {
+        td {
+          &:first-child {
+            font-size: 20px;
+          }
+          &:last-child {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .hoof-info-left {
+      float: none;
+      width: 90%;
+    }
+    .hoof-info-right {
+      float: none;
+      width: 90%;
+    }
+  }
+  .hoof-menu-food {
+    h2 {
+      font-size: 40px;
+      span {
+        font-size: 28px;
+      }
+    }
+    .section-header {
+      p {
+        padding: 0;
+      }
+    }
+    .hoof-menu-food-left {
+      float: none;
+      width: 80%;
+      h3 {
+        margin-bottom: 20px;
+        overflow: hidden;
+        span {
+          float: none;
+          &:before {
+            content: " - ";
+          }
+        }
+      }
+    }
+    .hoof-menu-food-right {
+      float: none;
+      width: 100%;
+    }
+  }
+  .hoof-menu-cocktails {
+    background: none;
+    float: none;
+    width: 100%;
+    h2 {
+      padding-left: 0;
+    }
+    p {
+      padding-left: 0;
+    }
+  }
+  .hoof-menu-beer {
+    background: none;
+    float: none;
+    padding-top: 40px;
+    width: 100%;
+  }
+  .hoof-menu-wine {
+    ul {
+      li {
+        display: block;
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+  }
+  footer {
+    padding: 50px 0 100px 0;
+    .content {
+      background: none;
+      min-height: auto;
+    }
+    .footer-left {
+      width: 100%;
+    }
+    address {
+      position: static;
+      margin: 20px 0;
+    }
+  }
 }

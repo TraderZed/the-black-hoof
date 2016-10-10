@@ -3,11 +3,20 @@ var haml = require('gulp-haml');
 var sass = require('gulp-sass');
 var coffee = require('gulp-coffee');
 var gutil = require('gulp-util');
+var imageop = require('gulp-image-optimization');
 
 gulp.task('haml', function () {
   gulp.src('./*.haml')
     .pipe(haml())
     .pipe(gulp.dest('./'));
+});
+
+gulp.task('images', function(cb) {
+    gulp.src(['assets/images/**/*.png','assets/images/**/*.jpg','assets/images/**/*.gif','assets/images/**/*.jpeg']).pipe(imageop({
+        optimizationLevel: 5,
+        progressive: true,
+        interlaced: true
+    })).pipe(gulp.dest('public/assets/images')).on('end', cb).on('error', cb);
 });
 
 gulp.task('coffee', function() {

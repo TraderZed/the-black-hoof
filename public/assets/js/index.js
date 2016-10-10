@@ -6,7 +6,21 @@ this.BlackHoof = (function() {
     this.getHours();
     this.getCocktails();
     this.getRedWine();
-    return this.getWhiteWine();
+    this.getWhiteWine();
+    this.getBeer();
+    return this.getCopy();
+  };
+
+  BlackHoof.getCopy = function() {
+    return $.ajax({
+      type: "GET",
+      url: "https://the-black-hoof.firebaseio.com/hoof_copydeck.json",
+      success: (function(_this) {
+        return function(data) {
+          return _this.populateCopy(data);
+        };
+      })(this)
+    });
   };
 
   BlackHoof.getHours = function() {
@@ -69,6 +83,18 @@ this.BlackHoof = (function() {
     });
   };
 
+  BlackHoof.getBeer = function() {
+    return $.ajax({
+      type: "GET",
+      url: "https://the-black-hoof.firebaseio.com/hoof_beer.json",
+      success: (function(_this) {
+        return function(data) {
+          return _this.buildBeer(data);
+        };
+      })(this)
+    });
+  };
+
   BlackHoof.buildHours = function(hours) {
     var $hoursTable;
     $hoursTable = $('.hoof-info-hours');
@@ -93,6 +119,14 @@ this.BlackHoof = (function() {
     });
   };
 
+  BlackHoof.buildBeer = function(items) {
+    var $beerMenu;
+    $beerMenu = $('.hoof-menu-beer-list');
+    return $.each(items, function(i, val) {
+      return $beerMenu.append('<li>' + val.name + '</li>');
+    });
+  };
+
   BlackHoof.buildRedWine = function(items) {
     var $redWineMenu;
     $redWineMenu = $('.hoof-menu-red-wine-list');
@@ -106,6 +140,12 @@ this.BlackHoof = (function() {
     $whiteWineMenu = $('.hoof-menu-white-wine-list');
     return $.each(items, function(i, val) {
       return $whiteWineMenu.append('<li><h3>' + val.name + '</h3><p>' + val.description + '<span>' + val.price + '</span></p></li>');
+    });
+  };
+
+  BlackHoof.populateCopy = function(copy) {
+    return $.each(copy, function(i, val) {
+      return $('.js-copy-' + val.key).html(val.copy);
     });
   };
 

@@ -1,9 +1,9 @@
 h1 {
-  font-family: $pt;
+  font-family: $playfair;
   font-size: 40px;
 }
 h2 {
-  font-family: $pt;
+  font-family: $playfair;
   font-size: 24px;
 }
 h3 {
@@ -11,14 +11,16 @@ h3 {
   font-size: 30px;
   text-transform: uppercase;
   &.serif {
-    font-family: $pt;
+    font-family: $playfair;
     text-transform: none;
     span {
       font-style: italic;
     }
   }
 }
-
+p {
+  line-height: 1.4em;
+}
 body {
   font-family: $courier;
   font-size: 13px;
